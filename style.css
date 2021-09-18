@@ -22,7 +22,7 @@ body {
   position: absolute;
   font-size: 100px;
   color: rgba(220, 220, 220, 0.8);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: white;
   padding: 10px;
 }
 
@@ -34,6 +34,13 @@ body {
   right: 0;
 }
 
+#precedent i {
+  color: tomato;
+}
+
+#suivant i {
+  color: #fb1;
+}
 
 #slider:hover #precedent,
 #slider:hover #suivant {
