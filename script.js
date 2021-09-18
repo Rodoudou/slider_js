@@ -1,4 +1,4 @@
-const slide = new Array("./assets/img/capture.png", "./assets/img/redouuu.jpeg");
+const slide = new Array("./assets/img/capture.png", "./assets/img/redouuu.jpeg", "./assets/img/redcolor.jpg");
 let numero = 0;
 
 
@@ -6,7 +6,7 @@ const ChangeSlide = (sens)=>{
     numero = numero + sens;
     (numero <0)?(numero = slide.length - 1): null;
     (numero > slide.length - 1)? (numero = 0): null;
-    
+
     document.getElementById("slide").src = slide[numero];
 }
 

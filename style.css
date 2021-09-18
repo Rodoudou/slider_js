@@ -41,6 +41,7 @@ body {
 }
 
 div img{
+  margin: auto;
   height: 300px;
   width: 300px;
 }
