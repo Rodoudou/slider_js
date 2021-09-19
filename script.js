@@ -1,26 +1,30 @@
-const ArrayImages = [
-  "./assets/img/capture.png",
-  './assets/img/lol.png',
-  "./assets/img/redcolor.jpg",
-  "./assets/img/redouuu.jpeg",
-];
+const items = document.querySelectorAll('img');
+const nbSlide = items.length;
+const suivant = document.querySelector('.right');
+const precedent = document.querySelector('.left');
+let count = 0;
 
-let position = 0;
+// fonction pour l'event fleche gauche
+const slidSuivante=()=>{
+  items[count].classList.remove('active');
+  (count < nbSlide -1)? count++ : count=0;
 
-const image = document.getElementById("image");
-
-const suivant = document.getElementById("suivant");
-const precedent = document.getElementById("precedent");
-
-const slideChange=(sens)=>{
-  position = position + sens;
-  // fleche de  gauche : si ma position est inferieur à 0 alors je me positionne sur l'avant derniere img
-  (position<0)?(position = ArrayImages.length -1): null;
-  // fleche de  droite : si ma position est superieur à 0 alors j'avance
-  (position>ArrayImages.length-1)?(position=0): null;
-  // attribuer une image à la balise img
-  image.src = ArrayImages[position];
-  console.log("ArrayImages.length -1",ArrayImages.length -1);
-  console.log("ArrayImages.length -1",ArrayImages[position] );
+  items[count].classList.add('active');
 }
 
+// fonction pour l'event fleche droite
+const slidPrecedente=()=>{
+  items[count].classList.remove('active');
+  (count > 0)? count-- : (count= nbSlide-1);
+
+  items[count].classList.add('active');
+}
+
+// fonction pour utiliser les fleches du clavier
+const keyPress =(e)=>{
+
+  (e.keyCode == '37') ? slidPrecedente() || (e.keyCode == '39') : slidSuivante();
+
+}
+
+document.addEventListener('keydown', keyPress)

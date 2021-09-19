@@ -15,14 +15,18 @@
 
   <h1>Slider Sanitaire</h1>
 
-  <div id="slider">
-    <img id="image" src="./assets/img/lol.png" alt="redou">
-    <div id="precedent" 
-    onclick="slideChange(-1)"
-    ><i class="fas fa-arrow-left"></i></div>
-    <div id="suivant" 
-   onclick="slideChange(1)"
-    ><i class="fas fa-arrow-right"></i></div>
+  <div class="container">
+    <div class="slider">
+      <img class="active" src="./assets/img/capture.png" alt="capture">
+      <img src="./assets/img/lol.png" alt="lol">
+      <img src="./assets/img/redcolor.jpg" alt="redColor">
+      <img src="./assets/img/redouuu.jpeg" alt="redouuuu">
+    </div>
+    <div class="cont-btn">
+      <div class="btn-nav left" onclick="slidSuivante(-1)"><i class="fas fa-arrow-left"></i></div>
+      <div class="btn-nav right" onclick="slidPrecedente(1)"><i class="fas fa-arrow-right"></i></div>
+    </div>
+
 
   </div>
 
